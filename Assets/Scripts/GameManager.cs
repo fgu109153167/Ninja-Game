@@ -9,6 +9,14 @@ public class GameManager : MonoBehaviour
     float span = 1.0f;             //時間間隔
     float delta = 0;               //現在已經累積的時間
     public GameObject hpGauge;     //置放血環的公開變數
+    public Text ScoreText;
+    int Score = 0;                 // 分數
+
+    void Start()
+    {
+        ScoreText.text = $"分數：{Score}";
+        //ScoreText.text = "分數：" + Score.ToString();
+    }
 
     void Update()
     {
@@ -25,5 +33,11 @@ public class GameManager : MonoBehaviour
     public void DecreaseHp()
     {
         hpGauge.GetComponent<Image>().fillAmount -= 0.1f;
+    }
+
+    public void IncreaseScore()
+    {
+        Score += 10;
+        ScoreText.text = $"分數：{Score}";
     }
 }
