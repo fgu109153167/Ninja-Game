@@ -986,6 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 1422364364967017248, guid: 0e1ad9792d11cd14d872a052e51e3e1d, type: 3}
+  CatFoodPrefab: {fileID: 3731537400896572134, guid: 5e66062340c67324d9e805c6f49fb8c1, type: 3}
   hpGauge: {fileID: 130551487}
   ScoreText: {fileID: 2060754912}
 --- !u!4 &1848763620
