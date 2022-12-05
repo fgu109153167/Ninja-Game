@@ -21,11 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        delta += Time.deltaTime;  // 累積時間到delta
-        if (delta > span) // 如果delta時間累積大於span時間間隔
-        {
-            delta = 0; // delta時間歸零
-        }
+        
     }
 
     void MakeArrow()
