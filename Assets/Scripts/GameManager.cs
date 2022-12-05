@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         ScoreText.text = $"分數：{Score}";
         //ScoreText.text = "分數：" + Score.ToString();
+        InvokeRepeating("MakeArrow", 2, 1.0f);
     }
 
     void Update()
@@ -23,10 +24,14 @@ public class GameManager : MonoBehaviour
         delta += Time.deltaTime;  // 累積時間到delta
         if (delta > span) // 如果delta時間累積大於span時間間隔
         {
-            delta = 0; // delta時間歸零            
-            int px = Random.Range(-6, 7); // 隨機產生一個-6到6之間的整數
-            Instantiate(arrowPrefab, new Vector3(px, 7, 0), Quaternion.identity); // 產生新箭頭，並且設定新箭頭的位置
+            delta = 0; // delta時間歸零
         }
+    }
+
+    void MakeArrow()
+    {
+        int px = Random.Range(-6, 7); // 隨機產生一個-6到6之間的整數
+        Instantiate(arrowPrefab, new Vector3(px, 7, 0), Quaternion.identity); // 產生新箭頭，並且設定新箭頭的位置
     }
 
     // 公開（Public）的方法（DecreaseHp），每執行一次，Fill Amount的數值就減少0.1
